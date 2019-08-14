@@ -1,0 +1,14 @@
+version: '3'
+services:
+  mysql:
+    image: yobasystems/alpine-mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpwd
+      MYSQL_DATABASE: goodname
+      MYSQL_USER: gdnuser
+      MYSQL_PASSWORD: gdnpwd
+    expose:
+      - "3306"
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    restart: always
